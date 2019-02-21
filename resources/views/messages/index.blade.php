@@ -3,24 +3,27 @@
 
 <h1>メッセージ一覧</h1>
 @if(count($messages) >0)
-  <table class="table table-striped">
+<table class="table table-striped">
     <thead>
-      <tr>
-        <th>id</th>
-        <th>メッセージ</th>
-      </tr>
+        <tr>
+            <th>id</th>
+            <th>メッセージ</th>
+        </tr>
     </thead>
     <tbody>
-      @foreach($messages as $message)
+        @foreach($messages as $message)
         <tr>
-          <td>{{$message -> id}}</td>
-          <td>{{$message -> content}}</td>
+            <td>{{$message -> id}}</td>
+            <td>{{$message -> content}}</td>
         </tr>
 
-      @endforeach
+        @endforeach
     </tbody>
 
-  </table>
+</table>
 
 @endif
 @endsection
+
+<!-- リンクの追加 -->
+{!! link_to_route('messages.create','新規投稿',null,['class'=>'btn btn primary'])!!} 
