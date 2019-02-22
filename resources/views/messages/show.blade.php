@@ -7,9 +7,14 @@
         <td>{{ $message->id }}</td>
     </tr>
     <tr>
+        <th>タイトル</th>
+        <td>{{ $message->title }}</td>
+    </tr>
+    <tr>
         <th>メッセージ</th>
         <td>{{ $message->content }}</td>
     </tr>
+
 </table>
 {{ link_to_route('messages.edit','編集する', ['id' => $message->id],['class' => 'btn btn-success'])}}
 {{Form::model($message,['route'=>['messages.destroy',$message->id],'method' => 'delete'])}}
