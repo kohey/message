@@ -40,6 +40,11 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
+        $message = new Message();
+        $message->content = $request->content;
+        $message->save();
+
+        return redirect('/');
     }
 
     /**
@@ -51,6 +56,9 @@ class MessagesController extends Controller
      */
     public function show($id)
     {
+        $message = Message::find($id);
+
+        return view('messages.show', ['message' => $message]);
     }
 
     /**

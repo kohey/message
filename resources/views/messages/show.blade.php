@@ -1,4 +1,14 @@
-@extends('layouts.app');
+@extends('layouts.app')
 @section('content')
-
-@endsection
+<h1>id = {{ $message->id }}の詳細ページ</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>id</th>
+        <td>{{ $message->id }}</td>
+    </tr>
+    <tr>
+        <th>メッセージ</th>
+        <td>{{ $message->content }}</td>
+    </tr>
+</table>
+@endsection 
