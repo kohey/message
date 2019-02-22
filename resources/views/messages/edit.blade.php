@@ -1,4 +1,4 @@
-@extends('layouts.app');
+@extends('layouts.app')
 @section('content')
 
 <h1>id: {{ $message->id }} のメッセージ編集ページ</h1>
